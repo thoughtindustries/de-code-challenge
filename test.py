@@ -1,6 +1,5 @@
-from src import etl
+import etl
 import uuid
-import pytest
 from datetime import datetime
 from datetime import timezone
 

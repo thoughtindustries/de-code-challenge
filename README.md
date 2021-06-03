@@ -1,6 +1,6 @@
 # Thought Industries Data Engineering Code Challenge
 
-Congratulations on making it the code challenge step of the interview process!
+Congratulations on making it to the code challenge step of the interview process!
 
 This challenge is designed to test your knowledge of Python, ETL, LookML and data modeling.
 This readme will outline how to get started and what's expected of the two challenge components.
