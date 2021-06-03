@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source .venv/bin/activate
+
+docker-compose up -d
+
+until psql -U postgres -h localhost -p 5433 -c '\q' > /dev/null 2>&1; do
+  >&2 echo 'Postgres unavailable, sleeping...'
+  sleep 1
+done
+echo 'Postgres is ready'
+psql -U postgres -h localhost -p 5433 -f pg_schema.sql
+
+pytest test.py -vv -p no:warnings --cov=src --cov-report html
+
+docker-compose down
