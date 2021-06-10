@@ -7,8 +7,7 @@ This readme will outline how to get started and what's expected of the two chall
 
 ## Getting Started
 
-To get started with the challenge, you can either download a zip file of this repo, 
-or create your own fork in GitHub.
+To get started with the challenge, you can either create a new repository from this template, create a **private** fork, or download a zip file.
 
 Once you have the code on your machine, you're ready to begin the ETL portion of the challenge.
 
@@ -72,7 +71,7 @@ should have joins for all related tables, with join conditions and relationship 
 Explore file names should match the names of the view they are based on.<br/><br/>
 For access levels of company and client, add access filters for company and client users attributes (mapped to the company and client dimensions of the base view). Company access needs access filters for company, while client access needs filters for both company and client. 
 ## Completion
-When you have completed both sections, you can either share a link to your GitHub fork, 
+When you have completed both sections, you can either share a link to your GitHub repo, 
 or zip up your files and share via e-mail.
 
 You will be notified of your results and next steps in a timely manner.
