@@ -1,3 +1,4 @@
+version: '2.4'
 services:
   rethinkdb:
     image: rethinkdb:2.3
@@ -10,3 +11,21 @@ services:
       - "5433:5432"
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  de-challenge:
+      build:
+          dockerfile: ./Dockerfile
+          context: .
+      command: tail -F anything
+      depends_on:
+        postgres:
+          condition: service_healthy
+        rethinkdb:
+          condition: service_started
+      volumes:
+        - .:/code
+

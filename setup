@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# For those who want a local Python development environment
+
 if [ ! -d ~/.pyenv ]
 then
   curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash

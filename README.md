@@ -30,16 +30,21 @@ The system requirements, general procedure and rules are outlined below.
 
 ### System Requirements
 1. UNIX-based environment (MacOS, Ubuntu/Linux). Windows systems should work, 
-but may require tweaks to the setup and run scripts, but these can be performed manually.
+but may require tweaks to the setup and run scripts, but these can also be performed manually.
 2. Docker
 
 ### Procedure
-1. Run the `setup` script, this installs pyenv, installs the necessary Python version, 
-sets up a virtual environment and installs the necessary Python packages
-2. Review and run the `run` script. The pytests will fail, but you'll get familiar with how the system runs.
-3. Review the code in `test.py` and `src/etl.py` to see what needs to be implemented.
+The code is written to be run within a docker compose deployment to reduce local system dependencies.
+All commands to deploy and run the ETL test are in the `run` script.
+
+2. Review and run the `run` script. The tests will fail, but you'll get familiar with how the system runs.
+3. Review the code in `tests/test.py` and `lib/etl.py` to see what needs to be implemented.
 4. Implement the necessary functions
 5. When confident in your solution, confirm that the run script runs successfully and all tests are passing.
+
+If you want to keep the docker-compose deployment up so you can interactively run code 
+in the Python container as you make changes, just run `docker-compose up -d`. 
+Just remember that RethinkDB and Postgres need initialization when initially deployed.
 
 ### Rules
 1. No touching of the `test.py` file

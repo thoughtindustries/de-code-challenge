@@ -1,9 +1,10 @@
-import etl
+from lib import etl
 import uuid
 from datetime import datetime
 from datetime import timezone
 
 etl.init_rethinkdb()
+etl.init_postgres()
 
 
 def test_rdb_init():

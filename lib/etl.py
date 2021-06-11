@@ -44,7 +44,7 @@ def rdb_connect():
   Wrapper for getting a RethinkDB connection
   :return:
   """
-  return r.connect(**{'host': 'localhost', 'port': '28016', 'db': 'test'})
+  return r.connect(**{'host': 'rethinkdb', 'port': '28015', 'db': 'test'})
 
 
 def pg_connect():
@@ -52,7 +52,7 @@ def pg_connect():
   Wrapper for getting a PostgreSQL connection
   :return:
   """
-  conn = psycopg2.connect(dbname='postgres', user='postgres', port=5433, host='localhost')
+  conn = psycopg2.connect(dbname='postgres', user='postgres', port=5432, host='postgres')
   conn.set_session(autocommit=True)
   return conn
 
@@ -75,15 +75,6 @@ def setup_logger(name):
 logger = setup_logger('etl')
 
 
-def quote(items):
-  """
-  Quotes a list of items
-  :param items: List of items
-  :return: Quoted list of items
-  """
-  return [f"\"{item}\"" for item in items]
-
-
 def init_rethinkdb():
   """
   Initializes the RethinkDB instance
@@ -101,6 +92,17 @@ def init_rethinkdb():
         r.table(table).index_create('updatedAt').run(conn)
       except Exception as e:
         logger.warning(f"updatedAt index already exists in {table}")
+
+
+def init_postgres():
+  """
+  Initializes the PostgreSQL instance
+  :return:
+  """
+  with pg_connect() as conn:
+    logger.info("Initializing PostgreSQL...")
+    cursor = conn.cursor()
+    cursor.execute(open('pg_schema.sql', 'r').read())
 
 
 def reset_rethinkdb(*tables):
