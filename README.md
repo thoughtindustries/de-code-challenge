@@ -7,8 +7,7 @@ This readme will outline how to get started and what's expected of the two chall
 
 ## Getting Started
 
-To get started with the challenge, you can either download a zip file of this repo, 
-or create your own fork in GitHub.
+To get started with the challenge, you can either create a new repository from this template, create a **private** fork, or download a zip file.
 
 Once you have the code on your machine, you're ready to begin the ETL portion of the challenge.
 
@@ -47,12 +46,12 @@ in the Python container as you make changes, just run `docker-compose up -d`.
 Just remember that RethinkDB and Postgres need initialization when initially deployed.
 
 ### Rules
-1. No touching of the `test.py` file
+1. No modifying of the `test.py` file
 2. The functions should be implemented as outlined by the docs, 
 no adding of parameters or changing of return types.
 2. Your solution can be as simple or complex as you like, so long as the tests pass.
 
-## Looker
+## Looker Challenge
 
 This section will test your Looker/LookML and data modeling skills. 
 You will be implementing code necessary to expose data within Looker, namely views, models and explores.
@@ -66,18 +65,18 @@ All code should be stored in the `looker` folder in their respective folders.
 1. Create one view for each table in the data model, stored in the views folder. There should be one dimension for each field, 
 as well as a count measure.
 2. Create a model called `ti` and additional `ti_shared.lkml` file stored in the models folder. 
-The `ti` model should contain includes for `ti_shared.lkml` and the views and the explores. 
-This should be accomplished using only include 3 statements. The model should also contain a connection string for a connection named `postgres`.
+The `ti` model should contain includes for `ti_shared.lkml` and the explores. 
+This should be accomplished using only 2 include statements. The model should also contain a connection string for a connection named `postgres`.
 3. In `ti_shared.lkml` use access grants to create three levels of access based on a `access_level` user attribute.
 These access levels should be called internal, company and client. Access should be additive starting from internal
-(internal also gets company and client access).
+(internal also gets company and client access, company gets client access).
 4. Create one explore file for each view, stored in the explore folder. Explores files should be structured so
-that there is one base explore which is extended once per access level defined in `ti_shared`. Each explore
-should have joins for all related tables, with join conditions and relationship (cardinality) defined.
-Explore file names should match names of the view they are based on.
-
+that there is one base explore (extension required) which is extended once per access level defined in `ti_shared`. Each explore
+should have joins for all related tables, with join conditions and relationship (cardinality) defined. Explores with 
+Explore file names should match the names of the view they are based on.<br/><br/>
+For access levels of company and client, add access filters for company and client users attributes (mapped to the company and client dimensions of the base view). Company access needs access filters for company, while client access needs filters for both company and client. 
 ## Completion
-When you have completed both sections, you can either share a link to your GitHub fork, 
+When you have completed both sections, you can either share a link to your GitHub repo, 
 or zip up your files and share via e-mail.
 
 You will be notified of your results and next steps in a timely manner.
