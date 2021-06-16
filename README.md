@@ -7,7 +7,9 @@ This readme will outline how to get started and what's expected of the two chall
 
 ## Getting Started
 
-To get started with the challenge, you can either create a new repository from this template, create a **private** fork, or download a zip file.
+To get started with the challenge, please try and leverage GitHub by either creating a **private** repository from
+this template or creating a **private** fork and setting that up on your machine. As a last resort, you can download
+a zip file. 
 
 Once you have the code on your machine, you're ready to begin the ETL portion of the challenge.
 
@@ -57,7 +59,9 @@ This section will test your Looker/LookML and data modeling skills.
 You will be implementing code necessary to expose data within Looker, namely views, models and explores.
 
 Unless you happen to have a Looker instance running locally to develop in, this will be free hand coding.
-You are expected to follow LookML syntax to the best of your ability. 
+You are expected to follow LookML syntax to the best of your ability. If you are not familiar with 
+LookML, please check out their free [course](https://training.looker.com/looker-development-foundations) 
+and [documentation](https://docs.looker.com/data-modeling/learning-lookml/lookml-intro).
 
 All code should be stored in the `looker` folder in their respective folders.
 
@@ -75,11 +79,14 @@ that there is one base explore (extension required) which is extended once per a
 should have joins for all related tables, with join conditions and relationship (cardinality) defined. Explores with 
 Explore file names should match the names of the view they are based on.<br/><br/>
 For access levels of company and client, add access filters for company and client users attributes (mapped to the company and client dimensions of the base view). Company access needs access filters for company, while client access needs filters for both company and client. 
-## Completion
-When you have completed both sections, you can either share a link to your GitHub repo, 
-or zip up your files and share via e-mail.
 
-You will be notified of your results and next steps in a timely manner.
+## Completion
+When you have completed all sections, ensure your work is pushed up to GitHub, then invite 
+matt.girard@thoughtindustries.com as a collaborator.
+
+If you decided to not use GitHub, please send a zip file of your work.
+
+Once you've shared your work, it will be reviewed and you will be notified of next steps.
 
 
 
