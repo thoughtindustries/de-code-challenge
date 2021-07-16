@@ -61,7 +61,7 @@ no adding of parameters or changing of return types.
 This section will test your Looker/LookML and data modeling skills. 
 You will be implementing code necessary to expose data within Looker, namely views, models and explores.
 
-Unless you happen to have a Looker instance running locally to develop in, this will be free hand coding.
+Unless you have a Looker instance to develop in, this will be free hand coding (a Looker instance is not required for this challenge).
 You are expected to follow LookML syntax to the best of your ability. If you are not familiar with 
 LookML, please check out their free [course](https://training.looker.com/looker-development-foundations) 
 and [documentation](https://docs.looker.com/data-modeling/learning-lookml/lookml-intro).
